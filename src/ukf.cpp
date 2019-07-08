@@ -176,10 +176,10 @@ void UKF::Prediction(double delta_t) {
 
   for(int i = 0; i<2*n_aug_+1; i++)
   {
-    double p_x = Xsig_aug(0, i);
-    double p_y = Xsig_aug(1, i);
-    double v = Xsig_aug(2, i);
-    double yaw = Xsig_aug(3, i);
+    double p_x  = Xsig_aug(0, i);
+    double p_y  = Xsig_aug(1, i);
+    double v    = Xsig_aug(2, i);
+    double yaw  = Xsig_aug(3, i);
     double yawd = Xsig_aug(4,i);
     double nu_a = Xsig_aug(5,i);
     double nu_yawd = Xsig_aug(6,i);

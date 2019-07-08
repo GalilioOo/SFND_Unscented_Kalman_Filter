@@ -9,12 +9,14 @@ Tools::Tools() {}
 
 Tools::~Tools() {}
 
+
 double Tools::noise(double stddev, long long seedNum)
 {
 	mt19937::result_type seed = seedNum;
 	auto dist = std::bind(std::normal_distribution<double>{0, stddev}, std::mt19937(seed));
 	return dist();
 }
+
 
 // sense where a car is located using lidar measurement
 lmarker Tools::lidarSense(Car& car, pcl::visualization::PCLVisualizer::Ptr& viewer, long long timestamp, bool visualize)
